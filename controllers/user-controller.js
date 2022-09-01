@@ -82,12 +82,14 @@ const userController = {
 
     // add friend to a user
     addFriend({ params }, res) {
-
+        User.findByIdAndUpdate({ _id: params.userId}, { $addToSet: { friends: params.friendId } }, { new: true })
+        .then(dbUserData => res.json(dbUserData));
     },
 
     // delete friend from a user
     deleteFriend({ params }, res) {
-        
+        User.findByIdAndUpdate({ _id: params.userId}, { $pull: { friends: params.friendId } }, { new: true })
+        .then(dbUserData => res.json(dbUserData));
     }
 };
 
