@@ -16,17 +16,21 @@ router
     .get(getAllThoughts)
     .post(addThought)
 
-// Set up GET one, PUT, and DELETE at /api/users/:id
+// Set up GET one, PUT, and DELETE at /api/thoughts/:id
 router
     .route('/:id')
     .get(getThoughtById)
     .put(updateThought)
     .delete(deleteThought)
 
-// Set up POST and DELETE at /api/thoughts/:thoughtId/reactions
+// Set up POST at /api/thoughts/:thoughtId/reactions
 router
-    .route('/:thoughtId/reactions')
+    .route('/:thoughtId/reactions/')
     .post(addReaction)
+
+// Set up DELETE at /api/thoughts/:thoughtId/reactions/:reactionId
+router
+    .route('/:thoughtId/reactions/:reactionId')
     .delete(deleteReaction)
 
 module.exports = router;
