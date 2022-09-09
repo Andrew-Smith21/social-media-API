@@ -1,1 +1,9 @@
-# social-media-API
+# Social Media API
+
+## Assignment
+Build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.
+
+## Built With
+* Javascript
+
+## Link to Demo Video
